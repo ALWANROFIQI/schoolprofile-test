@@ -1,24 +1,14 @@
 from rest_framework import serializers
-from .models import SchoolProfile, Student, Staff, Announcement, Achievement, Blog
+from .models import SchoolProfile, Staff, Achievement, Blog, Gallery
 
 class SchoolProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = SchoolProfile
         fields = '__all__'
 
-class StudentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Student
-        fields = '__all__'
-
 class StaffSerializer(serializers.ModelSerializer):
     class Meta:
         model = Staff
-        fields = '__all__'
-
-class AnnouncementSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Announcement
         fields = '__all__'
 
 class AchievementSerializer(serializers.ModelSerializer):
@@ -30,4 +20,15 @@ class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
         fields = ['id', 'judul', 'slug', 'tanggal', 'isi', 'gambar']
+
+class GallerySerializer(serializers.ModelSerializer):
+    gambar = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Gallery
+        fields = ['id', 'judul', 'gambar', 'tanggal']
+
+    def get_gambar(self, obj):
+        request = self.context.get('request')
+        return request.build_absolute_uri(obj.gambar.url) if obj.gambar else None
 
