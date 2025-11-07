@@ -12,7 +12,7 @@ export default function AchievementsPage() {
   });
   const [editingId, setEditingId] = useState(null);
 
-  const API_URL = "http://localhost:8000/api/achievements/"; // ✅ Gunakan Django API
+  const API_URL = "http://localhost:8000/api/achievements/";
 
   // Ambil data dari Django
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function AchievementsPage() {
     let method = "POST";
 
     if (editingId) {
-      url = `${API_URL}${editingId}/`; // ✅ Tambahkan slash
+      url = `${API_URL}${editingId}/`;
       method = "PUT";
     }
 
@@ -89,7 +89,7 @@ export default function AchievementsPage() {
   return (
     <AdminLayout>
       <div className="bg-white shadow-md rounded-lg p-6">
-        <h2 className="text-2xl font-semibold mb-6 text-blue-700">
+        <h2 className="text-3xl font-bold text-blue-700 mb-6">
           Kelola Prestasi
         </h2>
 
@@ -147,11 +147,11 @@ export default function AchievementsPage() {
         {/* Tabel Prestasi */}
         <table className="w-full border-collapse border">
           <thead>
-            <tr className="bg-blue-100 text-left">
-              <th className="border p-2">Gambar</th>
-              <th className="border p-2">Judul</th>
-              <th className="border p-2">Keterangan</th>
-              <th className="border p-2 text-center">Aksi</th>
+            <tr className="bg-blue-600 text-white">
+              <th className="border p-2 w-24">Gambar</th>
+              <th className="border p-2 w-32">Judul</th>
+              <th className="border p-2 w-48">Keterangan</th>
+              <th className="border p-2 w-24 text-center">Aksi</th>
             </tr>
           </thead>
           <tbody>

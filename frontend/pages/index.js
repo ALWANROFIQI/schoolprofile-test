@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <main className="text-gray-800">
-      {/* 🏫 HERO SECTION */}
+      {/* HERO SECTION */}
       <section
         className="relative h-[85vh] flex items-center justify-center bg-center bg-cover"
         style={{
@@ -59,7 +59,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 📊 STATISTIK SEKOLAH */}
+      {/* STATISTIK SEKOLAH */}
       <section className="relative z-20 -mt-20">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 bg-white shadow-lg rounded-2xl py-10 px-6">
           {/* Jumlah Siswa */}
@@ -102,11 +102,11 @@ export default function Home() {
 
 
 
-      {/* 🧑‍🏫 TENTANG SEKOLAH */}
+      {/* TENTANG SEKOLAH */}
       <section className="max-w-5xl mx-auto text-center px-6 py-20">
-        <h2 className="text-3xl font-semibold text-blue-700 mb-4">
-          Tentang Kami
-        </h2>
+        <h2 className="text-4xl font-extrabold text-blue-800 mb-12 tracking-wide">
+           Tentang Kami
+          </h2>
         <p className="text-gray-700 leading-relaxed max-w-3xl mx-auto">
           SMAN 1 Contoh berdiri sejak tahun 1985 dengan komitmen untuk menciptakan
           lingkungan belajar yang inspiratif, inovatif, dan menyenangkan. Kami percaya
@@ -115,78 +115,92 @@ export default function Home() {
         </p>
       </section>
 
-      {/* 🏆 PRESTASI TERBARU */}
-      <section className="bg-blue-50 py-16 px-6">
+      {/* PRESTASI TERBARU */}
+      <section className="bg-gradient-to-r from-blue-50 to-blue-100 py-16 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-blue-700 mb-10">
+          <h2 className="text-4xl font-extrabold text-blue-800 mb-12 tracking-wide">
             Prestasi Terbaru
           </h2>
 
           {prestasi.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
               {prestasi.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-white shadow p-6 rounded-xl hover:shadow-lg transition"
+                  className="bg-white rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300 ease-in-out"
                 >
                   {/* Gambar Prestasi */}
                   {item.gambar ? (
                     <img
                       src={item.gambar}
                       alt={item.judul}
-                      className="w-full h-48 object-cover rounded-lg mb-4"
+                      className="w-full h-52 object-cover rounded-t-2xl mb-4"
                     />
                   ) : (
-                    <div className="w-full h-48 bg-gray-100 flex items-center justify-center text-gray-400 rounded-lg mb-4">
+                    <div className="w-full h-52 bg-gray-200 flex items-center justify-center text-gray-400 rounded-t-2xl mb-4">
                       Tidak ada gambar
                     </div>
                   )}
 
                   {/* Judul dan Keterangan */}
-                  <h3 className="font-bold text-lg mb-2 text-blue-700">
-                    {item.judul}
-                  </h3>
-                  <p className="text-gray-600">{item.keterangan}</p>
+                  <div className="px-6 pb-6">
+                    <h3 className="text-xl font-semibold mb-2 text-blue-700 hover:text-blue-900 transition-colors">
+                      {item.judul}
+                    </h3>
+                    <p className="text-gray-600 text-sm">{item.keterangan}</p>
+                  </div>
                 </div>
               ))}
             </div>
           ) : (
-            <p>Belum ada data prestasi.</p>
+            <p className="text-gray-500 text-lg mt-4">Belum ada data prestasi.</p>
           )}
         </div>
       </section>
 
 
-      {/* 🖼️ GALERI */}
+
+      {/* GALERI */}
       <section className="max-w-6xl mx-auto text-center px-6 py-20">
-        <h2 className="text-3xl font-semibold text-blue-700 mb-12 relative inline-block">
+        <h2 className="text-4xl font-extrabold text-blue-800 mb-12 tracking-wide">
           Galeri Kegiatan
-          <span className="absolute left-1/2 -bottom-2 w-20 h-1 bg-blue-600 rounded-full -translate-x-1/2"></span>
         </h2>
 
         {galeri.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {galeri.map((item) => (
-              <div
-                key={item.id}
-                className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-500 transform hover:-translate-y-1"
-              >
-                {/* Gambar dengan efek zoom saat hover */}
-                <img
-                  src={item.gambar}
-                  alt={item.judul}
-                  className="w-full h-52 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
-                />
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {galeri.slice(0, 4).map((item) => (
+                <div
+                  key={item.id}
+                  className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-500 transform hover:-translate-y-1"
+                >
+                  {/* Gambar dengan efek zoom saat hover */}
+                  <img
+                    src={item.gambar}
+                    alt={item.judul}
+                    className="w-full h-52 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                  />
 
-                {/* Overlay gelap saat hover */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                  <p className="text-white text-lg font-semibold tracking-wide px-3">
-                    {item.judul}
-                  </p>
+                  {/* Overlay gelap saat hover */}
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                    <p className="text-white text-lg font-semibold tracking-wide px-3">
+                      {item.judul}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+
+            {/* Tombol lihat selengkapnya */}
+            <div className="mt-10">
+              <Link
+                href="/galeri"
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-md transition"
+              >
+                Lihat Selengkapnya
+              </Link>
+            </div>
+          </>
         ) : (
           <p className="text-gray-500">Belum ada gambar galeri.</p>
         )}

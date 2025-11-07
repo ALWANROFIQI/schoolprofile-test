@@ -14,9 +14,7 @@ export default function AdminLayout({ children }) {
   const router = useRouter();
 
   const handleLogout = () => {
-    // Tambahkan logika hapus session/token kalau ada
-    // localStorage.removeItem("token");
-    router.push("/"); // arahkan ke halaman beranda
+    router.push("/");
   };
 
   return (

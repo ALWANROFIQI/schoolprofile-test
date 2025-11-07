@@ -19,7 +19,7 @@ class AchievementSerializer(serializers.ModelSerializer):
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
-        fields = ['id', 'judul', 'slug', 'tanggal', 'isi', 'gambar']
+        fields = ['id', 'judul', 'tanggal', 'isi', 'gambar']
 
 class GallerySerializer(serializers.ModelSerializer):
     gambar = serializers.SerializerMethodField()

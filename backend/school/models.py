@@ -21,7 +21,6 @@ class Achievement(models.Model):
 
 class Blog(models.Model):
     judul = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True)
     tanggal = models.DateField(auto_now_add=True)
     isi = models.TextField()
     gambar = models.ImageField(upload_to='blogs/', null=True, blank=True)

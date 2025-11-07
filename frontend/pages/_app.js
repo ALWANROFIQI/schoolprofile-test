@@ -47,6 +47,11 @@ export default function MyApp({ Component, pageProps }) {
               </Link>
             </li>
             <li>
+              <Link href="/galeri" className="no-underline hover:text-gray-200">
+                Galeri
+              </Link>
+            </li>
+            <li>
               <Link href="/contact" className="no-underline hover:text-gray-200">
                 Kontak
               </Link>
@@ -69,7 +74,7 @@ export default function MyApp({ Component, pageProps }) {
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-blue-800 text-white mt-20">
+      <footer className="bg-blue-800 text-white">
         {/* Bagian atas */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-6 py-12 border-b border-blue-600">
           {/* Tentang */}

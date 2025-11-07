@@ -22,7 +22,7 @@ export default function ProfilePage() {
   return (
     <AdminLayout>
       <div className="bg-white shadow-md rounded-lg p-6">
-        <h2 className="text-2xl font-semibold mb-6 text-blue-700">Kelola Profil Sekolah</h2>
+        <h2 className="text-3xl font-bold text-blue-700 mb-6">Kelola Profil Sekolah</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block font-medium mb-1">Nama Sekolah</label>

@@ -35,15 +35,21 @@ export default function Contact() {
 
       {/* Header Section */}
       <section
-        className="bg-cover bg-center py-24 text-center text-white"
+        className="relative h-[60vh] flex items-center justify-center text-white text-center bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=80')",
+            "url('https://images.unsplash.com/photo-1519337265831-281ec6cc8514?auto=format&fit=crop&w=1600&q=80')",
         }}
       >
-        <h1 className="text-5xl font-bold mb-2 drop-shadow-lg">Contact Us</h1>
-        <p className="text-gray-200">Home / Contact Us</p>
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 px-6">
+          <h1 className="text-5xl font-extrabold mb-3">Hubungi Kami</h1>
+          <p className="text-lg text-gray-200 max-w-2xl mx-auto">
+            Kami siap membantu Anda dan keluarga dalam mendapatkan informasi seputar pendidikan di sekolah kami. Silakan hubungi kami melalui form atau media komunikasi yang tersedia.
+          </p>
+        </div>
       </section>
+
 
       {/* Contact Section */}
       <section className="max-w-6xl mx-auto py-20 px-6 md:px-16 grid md:grid-cols-2 gap-12 bg-white shadow-lg rounded-2xl mt-16 relative z-10">

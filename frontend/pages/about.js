@@ -115,20 +115,22 @@ export default function About() {
       </section>
 
       {/* Daftar Guru */}
-      <section className="py-16 px-6 md:px-16 bg-gray-50">
-        <div className="bg-white shadow-lg rounded-2xl p-8">
-          <h3 className="text-2xl font-semibold text-blue-600 mb-6 text-center">Daftar Guru</h3>
+      <section className="bg-white py-16 px-6 md:px-16">
+        <div className="p-8">
+          <h3 className="text-3xl font-extrabold text-blue-700 mb-10 text-center tracking-wide">
+            Daftar Guru
+          </h3>
 
           {loadingStaff ? (
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {Array.from({ length: 4 }).map((_, i) => (
                 <div
                   key={i}
-                  className="flex flex-col items-center text-center bg-gray-100 rounded-xl p-5 animate-pulse"
+                  className="flex flex-col items-center text-center bg-gray-100 rounded-2xl p-6 animate-pulse"
                 >
                   <div className="w-28 h-28 mb-4 bg-gray-300 rounded-full" />
-                  <div className="h-4 w-20 bg-gray-300 rounded mb-2" />
-                  <div className="h-3 w-16 bg-gray-200 rounded" />
+                  <div className="h-4 w-24 bg-gray-300 rounded mb-2" />
+                  <div className="h-3 w-20 bg-gray-200 rounded" />
                 </div>
               ))}
             </div>
@@ -137,7 +139,7 @@ export default function About() {
               {staff.map((guru) => (
                 <div
                   key={guru.id}
-                  className="flex flex-col items-center text-center bg-gray-50 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow"
+                  className="flex flex-col items-center text-center bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300"
                 >
                   <div className="w-28 h-28 mb-4">
                     <img
@@ -149,19 +151,22 @@ export default function About() {
                           : "/default-avatar.png"
                       }
                       alt={guru.name}
-                      className="w-full h-full object-cover rounded-full"
+                      className="w-full h-full object-cover rounded-full border-2 border-blue-100"
                     />
                   </div>
-                  <h4 className="font-semibold text-gray-800">{guru.name}</h4>
-                  <p className="text-sm text-gray-600">{guru.position}</p>
+                  <h4 className="font-semibold text-gray-800 text-lg hover:text-blue-700 transition-colors">
+                    {guru.name}
+                  </h4>
+                  <p className="text-sm text-gray-500">{guru.position}</p>
                 </div>
               ))}
             </div>
           ) : (
-            <p className="text-center text-gray-500">Belum ada data guru.</p>
+            <p className="text-center text-gray-500 text-lg mt-4">Belum ada data guru.</p>
           )}
         </div>
       </section>
+
     </div>
   );
 }

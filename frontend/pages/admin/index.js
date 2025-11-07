@@ -5,13 +5,14 @@ import {
   FaUser,
   FaTrophy,
   FaImages,
+  FaUserTie
 } from "react-icons/fa";
 import Link from "next/link";
 
 export default function AdminDashboard() {
   return (
     <AdminLayout>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
         {/* Artikel */}
         <Link
           href="/admin/posts"
@@ -46,6 +47,14 @@ export default function AdminDashboard() {
         >
           <FaImages size={32} className="mb-3" />
           <span className="font-semibold text-lg">Kelola Galeri</span>
+        </Link>
+
+        <Link
+          href="/admin/gallery"
+          className="flex flex-col items-center justify-center bg-green-600 text-white py-6 rounded-xl shadow hover:bg-green-700 transition"
+        >
+          <FaUserTie size={32} className="mb-3" />
+          <span className="font-semibold text-lg">Kelola Staff</span>
         </Link>
       </div>
     </AdminLayout>
