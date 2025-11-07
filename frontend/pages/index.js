@@ -37,7 +37,8 @@ export default function Home() {
       <section
         className="relative h-[85vh] flex items-center justify-center bg-center bg-cover"
         style={{
-          backgroundImage: "url('/images/school-hero.jpg')",
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80')",
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
